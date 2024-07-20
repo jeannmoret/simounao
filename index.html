@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pergunta Divertida</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      .title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      #yesBtn {
+        background-color: #28a745;
+        color: white;
+      }
+
+      #yesBtn:hover {
+        transform: scale(1.1);
+      }
+
+      #noBtn {
+        background-color: #dc3545;
+        color: white;
+        position: relative;
+      }
+
+      .response {
+        margin-top: 20px;
+        font-size: 1.5rem;
+        color: #28a745;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Vai rolar fototeta hoje???</h1>
+      <div class="buttons">
+        <button id="yesBtn">Sim</button>
+        <button id="noBtn">Não</button>
+      </div>
+      <div id="response" class="response"></div>
+    </div>
+    <script>
+      const noBtn = document.getElementById("noBtn");
+      const yesBtn = document.getElementById("yesBtn");
+      const response = document.getElementById("response");
+
+      noBtn.addEventListener("mouseover", () => {
+        const x = Math.random() * (window.innerWidth - noBtn.clientWidth);
+        const y = Math.random() * (window.innerHeight - noBtn.clientHeight);
+        noBtn.style.position = "absolute";
+        noBtn.style.left = `${x}px`;
+        noBtn.style.top = `${y}px`;
+      });
+
+      yesBtn.addEventListener("click", () => {
+        response.textContent = "Obaaaaaaa!";
+      });
+    </script>
+  </body>
+</html>
